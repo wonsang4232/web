@@ -68,41 +68,38 @@
 </html>
 
 <?php
-	echo "<script>alert('start')</script>";
-	if(($_SERVER['REQUEST_METHOD'] == 'POST'))
+	echo "<script>alert('wow')</script>";
+	if ( ($_SERVER['REQUEST_METHOD'] == 'POST') and isset($_POST['login']) )
 	{
-		echo "<script>alert('wow')</script>";
-		if ( ($_SERVER['REQUEST_METHOD'] == 'POST') and isset($_POST['login']) )
+		$username=$_POST['user_name'];
+		$userpassowrd=$_POST['user_password'];
+		echo "<script>alert('wow1')</script>";
+		if(empty($username))
 		{
-			$username=$_POST['user_name'];
-			$userpassowrd=$_POST['user_password'];
-			echo "<script>alert('wow1')</script>";
-			if(empty($username))
+			$errMSG = "아이디를 입력하세요.";
+		}
+		else if(empty($userpassowrd))
+		{
+			$errMSG = "패스워드를 입력하세요.";
+		}
+		else
+		{
+			echo "<script>alert(11111)</script>";
+			$user_check = "SELECT id FROM member WHERE id = '{$id}' ";
+			$res = @mysqli_fetch_array(mysqli_query($db,$user_check));
+			if($res['id'] && $res['password'] == $userpassowrd)
 			{
-				$errMSG = "아이디를 입력하세요.";
-			}
-			else if(empty($userpassowrd))
-			{
-				$errMSG = "패스워드를 입력하세요.";
+				echo "<script>alert('wow')</script>";
+				$_SESSION['username'] = "{$username}";
+				$_SESSION['logined'] = "True";
+				$_SESSION['enc'] = hash('sha256', '{$username}');
 			}
 			else
 			{
-				echo "<script>alert(11111)</script>";
-				$user_check = "SELECT id FROM member WHERE id = '{$id}' ";
-				$res = @mysqli_fetch_array(mysqli_query($db,$user_check));
-				if($res['id'] && $res['password'] == $userpassowrd)
-				{
-					echo "<script>alert('wow')</script>";
-					$_SESSION['username'] = "{$username}";
-					$_SESSION['logined'] = "True";
-					$_SESSION['enc'] = hash('sha256', '{$username}');
-				}
-				else
-				{
-					header("Location: /");
-				}
+				header("Location: /");
 			}
 		}
+	}
 
 	if(isset($errMSG))
 			echo "<script>alert('$errMSG')</script>";
