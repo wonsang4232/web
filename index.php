@@ -27,7 +27,7 @@
 	<p>
 	<h2 align="center">Comibear's Website</h2><hr><hr>
 	<br><br><br><br><br><br><br><br>
-	<form class="form-horizontal" method="POST" onsubmit="return false;">
+	<form class="form-horizontal" method="POST">
 		<div class="form-group" style="text-align:center">
 			<label for="user_name">ID</label><br>
 			<input type="text" name="user_name"  class="form-control" id="inputID" placeholder="Input your ID"
@@ -45,7 +45,7 @@
 		</div>
 		</br>
 		<div class="form-group" style="text-align:center">
-			<button type="submit" name="login">Login</button>
+			<input type="submit" name="login" value="Login"></input>
 			<a class="btn btn-success" href="register.php" style="margin-left: 50px">
 			<span class="glyphicon glyphicon-user"></span>&nbsp;Register</a>
 		</div>
@@ -56,7 +56,6 @@
 </html>
 
 <?php
-	echo "<script>alert('wow')</script>";
 	if ( ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['login']))
 	{
 		$username=$_POST['user_name'];
@@ -73,23 +72,19 @@
 		else
 		{
 			echo "<script>alert(11111)</script>";
-			$user_check = "SELECT id FROM member WHERE id = '{$id}' ";
+			$user_check = "SELECT * FROM member WHERE id = '{$username}' ";
 			$res = @mysqli_fetch_array(mysqli_query($db,$user_check));
 			if($res['id'] && $res['password'] == $userpassowrd)
 			{
-				echo "<script>alert('wow')</script>";
+				echo "<script>alert('wo23515091820580912398524w')</script>";
 				$_SESSION['username'] = "{$username}";
 				$_SESSION['logined'] = "True";
 				$_SESSION['enc'] = hash('sha256', '{$username}');
 			}
-			else
-			{
-				header("Location: /");
-			}
+			header("Location: /");
 		}
 	}
-
 	if(isset($errMSG))
 		echo "<script>alert('$errMSG')</script>";
-	echo "<script>alert('end')</script>";
+	exit;
 ?>
