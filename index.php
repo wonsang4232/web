@@ -68,7 +68,8 @@
 </html>
 
 <?php
-	if(isset($_POST['login']))
+	echo "<script>alert('start')</script>";
+	if(($_SERVER['REQUEST_METHOD'] == 'POST'))
 	{
 		echo "<script>alert('wow')</script>";
 		if ( ($_SERVER['REQUEST_METHOD'] == 'POST') and isset($_POST['login']) )
