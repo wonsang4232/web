@@ -18,16 +18,18 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap1.min.css">
 </header>
 <body>
-    <h2 align="center">
+    <h1 align="center">
         <?php
             $id = "{$_SESSION['username']}";
             $nick = "SELECT * FROM member WHERE id = '{$id}' ";
             $res = @mysqli_fetch_array(mysqli_query($db,$nick));
             echo "{$res['nickname']}";
         ?>
-    </h2><hr>
-    <div class="form-group" style="text-align:right;">
-        <a href="logout.php">logout</a>
+    </h1><hr>
+    <div style="width:100vw; height: 90vh; display: flex; align-items: center;">
+        <div style="border: 1px solid green; width:300px; height: 500px; line-height: 30px; text-align:center;  margin: 0 auto;">
+            <h2> Menu </h2>
+        </div>
     </div>
 </body>
 </html>
