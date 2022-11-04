@@ -1,3 +1,3 @@
 # web
-This is Comibear's first web site.\n
-comibear.kr
+This is Comibear's first web site.
+http://comibear.kr/
