@@ -79,12 +79,13 @@
 				echo "<script>alert('wo23515091820580912398524w')</script>";
 				$_SESSION['username'] = "{$username}";
 				$_SESSION['logined'] = "True";
-				$_SESSION['enc'] = hash('sha256', '{$username}');
+				$_SESSION['enc'] = hash('sha256', '${username}');
+				echo "<script>alert('almost done')</script>";
 			}
+			exit;
 			header("Location: /");
 		}
 	}
 	if(isset($errMSG))
 		echo "<script>alert('$errMSG')</script>";
-	exit;
 ?>
