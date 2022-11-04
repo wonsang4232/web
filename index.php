@@ -102,7 +102,6 @@
 	}
 
 	if(isset($errMSG))
-			echo "<script>alert('$errMSG')</script>";
+		echo "<script>alert('$errMSG')</script>";
 	echo "<script>alert('end')</script>";
-	}
 ?>
