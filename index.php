@@ -56,7 +56,7 @@
 			<label><input type="checkbox">remember your ID?</label>
 		</div>
 		</br>
-		<div class="form-group" style="text-align:center">
+		<div class="from-group" style="text-align:center">
 			<button type="submit" name="login" class="btn btn-success">Login</button>
 			<a class="btn btn-success" href="register.php" style="margin-left: 50px">
 			<span class="glyphicon glyphicon-user"></span>&nbsp;Register</a>
