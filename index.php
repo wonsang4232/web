@@ -60,7 +60,6 @@
 	{
 		$username=$_POST['user_name'];
 		$userpassowrd=$_POST['user_password'];
-		echo "<script>alert('wow1')</script>";
 		if(empty($username))
 		{
 			$errMSG = "아이디를 입력하세요.";
@@ -71,7 +70,6 @@
 		}
 		else
 		{
-			echo "<script>alert(11111)</script>";
 			$user_check = "SELECT * FROM member WHERE id = '{$username}' ";
 			$res = @mysqli_fetch_array(mysqli_query($db,$user_check));
 			if($res['id'] && $res['password'] == $userpassowrd)

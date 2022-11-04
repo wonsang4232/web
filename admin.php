@@ -1,12 +1,12 @@
-<?php
-    echo "hello admin";
-?>
 <html>
 <header>
-    <p>hello admin</p>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap1.min.css">
 </header>
 <body>
-    <a class="btn btn-success" href="logout.php" style="margin-left: 50px">
-    <span class="glyphicon glyphicon-user"></span>&nbsp;logout</a>
+    <h2 align="center">Admin</h2><hr>
+    <div class="form-group" style="text-align:right;">
+        <a href="logout.php">logout</a>
+    </div>
 </body>
 </html>
