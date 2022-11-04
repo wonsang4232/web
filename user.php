@@ -14,10 +14,20 @@
 ?>
 <html>
 <header>
-    <p>hello user</p>
+    <title>User Page</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap1.min.css">
 </header>
 <body>
-    <a class="btn btn-success" href="logout.php" style="margin-left: 50px">
-    <span class="glyphicon glyphicon-user"></span>&nbsp;logout</a>
+    <h2 align="center">
+        <?php
+            $id = "{$_SESSION['username']}";
+            $nick = "SELECT * FROM member WHERE id = '{$id}' ";
+            $res = @mysqli_fetch_array(mysqli_query($db,$nick));
+            echo "{$res['nickname']}";
+        ?>
+    </h2><hr>
+    <div class="form-group" style="text-align:right;">
+        <a href="logout.php">logout</a>
+    </div>
 </body>
 </html>
