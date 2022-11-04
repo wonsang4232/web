@@ -40,12 +40,8 @@
 				required  autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" /><br>
 		</div>
 		<br>
-		<div class="checkbox" style="text-align:center">
-			<label><input type="checkbox">remember your ID?</label>
-		</div>
-		</br>
 		<div class="form-group" style="text-align:center">
-			<button type="submit" name="login">Login</button>
+			<input type="submit" name="login" value="Login"></input>
 			<a class="btn btn-success" href="register.php" style="margin-left: 50px">
 			<span class="glyphicon glyphicon-user"></span>&nbsp;Register</a>
 		</div>
