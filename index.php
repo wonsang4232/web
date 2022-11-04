@@ -69,7 +69,7 @@
 
 <?php
 	echo "<script>alert('wow')</script>";
-	if ( ($_SERVER['REQUEST_METHOD'] == 'POST') and isset($_POST['login']) )
+	if ( ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['login']) )
 	{
 		$username=$_POST['user_name'];
 		$userpassowrd=$_POST['user_password'];
