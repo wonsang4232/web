@@ -26,9 +26,12 @@
             echo "{$res['nickname']}";
         ?>
     </h1><hr>
-    <div style="width:100vw; height: 90vh; display: flex; align-items: center;">
+    <div style="width:90vw; height: 90vh; display: flex; align-items: center;">
         <div style="border: 1px solid green; width:300px; height: 500px; line-height: 30px; text-align:center;  margin: 0 auto;">
-            <h2> Menu </h2>
+            <h2> Menu </h2></br>
+            <h2> change password </h2></br>
+            <h2> delete user </h2></br>
+            <h2> logout </h2>
         </div>
     </div>
 </body>
