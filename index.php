@@ -19,6 +19,20 @@
 <head>
 	<title>Main Page</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap1.min.css">
+	<style>
+      body {
+        font-family: Consolas, monospace;
+        font-family: 12px;
+      }
+      table {
+        width: 100%;
+      }
+      th, td {
+        padding: 10px;
+        border-bottom: 1px solid #dadada;
+        text-align: center;
+      }
+    </style>
 </head>
 
 <body>

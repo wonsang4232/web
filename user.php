@@ -3,7 +3,7 @@
     include "check.php";
     if($chk == False)
     {
-        header("Location: logout.php");
+        header("Location: index.php");
     }
     $admin = "SELECT is_admin FROM member WHERE id = '{$_SESSION['username']}' ";
     $result = @mysqli_fetch_array(mysqli_query($db,$admin));
@@ -16,6 +16,20 @@
 <header>
     <title>User Page</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap1.min.css">
+    <style>
+      body {
+        font-family: Consolas, monospace;
+        font-family: 12px;
+      }
+      table {
+        width: 100%;
+      }
+      th, td {
+        padding: 10px;
+        border-bottom: 1px solid #dadada;
+        text-align: center;
+      }
+    </style>
 </header>
 <body>
     <h1 align="center">
@@ -26,12 +40,12 @@
             echo "{$res['nickname']}";
         ?>
     </h1><hr>
-    <div style="width:90vw; height: 90vh; display: flex; align-items: center;">
-        <div style="border: 1px solid green; width:300px; height: 500px; line-height: 30px; text-align:center;  margin: 0 auto;">
+    <div style="width:99vw; height: 85vh; display: flex; align-items:center;">
+        <div style="border: 5px solid green; width:300px; height: 500px; line-height: 30px; text-align:center;  margin: 0 auto;">
             <h2> Menu </h2></br>
-            <h2> change password </h2></br>
-            <h2> delete user </h2></br>
-            <h2> logout </h2>
+            <a href="change_pw.php"> 1. change password </a></br>
+            <a href="delete_user.php"> 2. delete user </a></br>
+            <a href="logout.php"> 3. logout </a>
         </div>
     </div>
 </body>
