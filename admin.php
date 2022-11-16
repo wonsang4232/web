@@ -55,7 +55,7 @@
                 </form>
                 ';
                 $delete = '
-                <form action="employees.php" method="POST">
+                <form action="delete_user.php" method="POST">
                 <input type="submit" value="Delete">
                 </form>
                 ';
